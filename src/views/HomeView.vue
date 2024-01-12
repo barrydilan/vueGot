@@ -20,7 +20,6 @@ import QuotesView from './QuotesView.vue';
 }
 
 .grid-item {
-  height: 100vh;
   box-sizing: border-box;
 }
 </style>
