@@ -1,14 +1,12 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import Navigation from './components/NavigationList.vue'
+import HomeView from './views/HomeView.vue';
 
 </script>
 
 <template>
   <header>
-    <Navigation/>
   </header>
-  <RouterView />
+  <HomeView />
 </template>
 
 <style scoped>
