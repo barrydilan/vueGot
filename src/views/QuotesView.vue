@@ -7,12 +7,12 @@ import ListItem from '@/components/ListItem.vue'
 import GameOfThronesAPI from '../services/api'
 import type { Quote } from '@/types'
 
-const requester = new GameOfThronesAPI()
+const api = new GameOfThronesAPI()
 const quotes = ref([] as Quote[])
 
 async function fetchData() {
   try {
-    const response = await requester.getRandomQuotes(5)
+    const response = await api.getRandomQuotes(5)
     quotes.value = response
     quotes.value.sort((a, b)=>(a.sentence.length - b.sentence.length))
   } catch (error) {

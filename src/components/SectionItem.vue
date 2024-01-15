@@ -57,6 +57,7 @@ export default {
 
 .title {
   font-size: 3rem;
+  color: var(--section-heading);
 }
 
 .search-form {
@@ -82,6 +83,7 @@ export default {
   display: flex;
   flex-direction: column;
   row-gap: 3rem;
+  align-items: center;
 }
 
 .content_list {

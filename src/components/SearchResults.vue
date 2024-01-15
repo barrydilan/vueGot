@@ -10,6 +10,7 @@ export default {};
 
 <style scoped>
   ul {
+    padding: 0;
     list-style: none;
     display: grid;
     grid-template-columns: repeat(2, 1fr);

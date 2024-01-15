@@ -7,12 +7,12 @@ import ListItem from '@/components/ListItem.vue'
 import GameOfThronesAPI from '../services/api'
 import type { Character } from '@/types'
 
-const requester = new GameOfThronesAPI()
+const api = new GameOfThronesAPI()
 const persons = ref([] as Character[])
 
 async function fetchData() {
   try {
-    const response = await requester.getAllCharacters()
+    const response = await api.getAllCharacters()
     persons.value = response
   } catch (error) {
     console.error('Error fetching data:', error)

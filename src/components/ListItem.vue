@@ -15,11 +15,9 @@ export default {
 
 <style scoped>
 li {
-  padding: 0.4rem;
-  color: white;
-  /* border: 1px solid #ccc; */
-  border-radius: 8px;
-  background-color: #343434;
+  padding: 0.8rem;
+  color: var(--tile-text);
+  background-color: var(--color-background-tile);
   transition: background-color 0.3s ease;
   text-align: center;
 }
