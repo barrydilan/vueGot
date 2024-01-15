@@ -3,42 +3,50 @@
     <h2 class="title">{{ sectionTitle }}</h2>
     <div class="content">
       <div class="content_wrapper">
-        <form class="search-form" @submit.prevent="getSearchResults">
-        <input class="search-input" type="text" :placeholder="'Search for ' + sectionTitle" v-model="searchValue">
-        <button class="search-btn" type="submit">Search!</button>
-        </form>
-        <ul class="content_list">
-          <li class="content_list-item">Section content 1</li>
-          <li class="content_list-item">Section content 1</li>
-          <li class="content_list-item">Section content 1</li>
-          <li class="content_list-item">Section content 1</li>
-        </ul>
+        <slot/>
       </div>
     </div>
   </section>
 </template>
 
 <script lang="ts">
+
 export default {
   props: {
     sectionTitle: {
       type: String,
       required: true,
-    }
+    },
+    callback: {
+      type: Function,
+    },
   },
   data() {
     return {
       searchValue: '',
+      response: '',
     }
   },
   methods: {
-    getSearchResults() {
-      console.log(this.searchValue);
-    }
+  //   async fetchData() {
+  //     try {
+  //       const response = await fetch('https://api.gameofthronesquotes.xyz/v1/houses');
+  //       const data = await response.json();
+  //       const [character] = data;
+  //       console.log(data);
+  //       this.response = data;
+  //       console.log(this.response);
+  //     } catch (error) {
+  //       console.error('Error fetching data:', error);
+  //     }
+  //   },
+  //   getSearchResults() {
+  //     this.fetchData();
+  //     console.log(this.searchValue);
+  //   }
   }
 };
 </script>
-
 
 <style>
 .wrapper {
@@ -89,3 +97,11 @@ export default {
   font-size: 1.5rem;
 }
 </style>
+<!-- <form class="search-form" @submit.prevent="">
+        <input class="search-input" type="text" :placeholder="'Search for ' + sectionTitle" v-model="searchValue">
+        <button class="search-btn" type="submit">Search!</button>
+        </form> -->
+        <!-- <ul class="content_list"> -->
+          <!-- <p>{{itemList.name}}</p> -->
+          <!-- <li v-for="item in itemList" :key="item.id" class="content_list-item">{{ item.name }}</li> -->
+        <!-- </ul> -->

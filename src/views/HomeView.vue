@@ -7,9 +7,15 @@ import QuotesView from './QuotesView.vue';
 
 <template>
   <main class="main">
-    <div class="grid-item"><HousesView /></div>
-    <div class="grid-item"><PersonsView /></div>
-    <div class="grid-item"><QuotesView /></div>
+    <div class="grid-item">
+      <HousesView />
+    </div>
+    <div class="grid-item">
+      <PersonsView />
+    </div>
+    <div class="grid-item">
+      <QuotesView />
+    </div>
   </main>
 </template>
 
@@ -21,5 +27,4 @@ import QuotesView from './QuotesView.vue';
 
 .grid-item {
   box-sizing: border-box;
-}
-</style>
+}</style>

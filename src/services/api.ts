@@ -17,12 +17,12 @@ export default class GameOfThronesAPI {
     return response.json();
   }
 
-  async getRandomQuotes(count: number): Promise<Quote[]> {
+  async getRandomQuotes(count: number): Promise<any> {
     const url = `${this.baseURL}/random/${count}`;
     return this.fetchData(url);
   }
 
-  async getCharacterQuotes(author: string, count: number): Promise<Quote[]> {
+  async getCharacterQuotes(author: string, count: number): Promise<any> {
     const url = `${this.baseURL}/author/${author}/${count}`;
     return this.fetchData(url);
   }
@@ -32,17 +32,17 @@ export default class GameOfThronesAPI {
     return this.fetchData(url);
   }
 
-  async getSingleHouse(house: string): Promise<House> {
+  async getSingleHouse(house: string): Promise<any> {
     const url = `${this.baseURL}/house/${house}`;
     return this.fetchData(url);
   }
 
-  async getAllCharacters(): Promise<Character[]> {
+  async getAllCharacters(): Promise<any> {
     const url = `${this.baseURL}/characters`;
     return this.fetchData(url);
   }
 
-  async getSingleCharacter(name: string): Promise<Character> {
+  async getSingleCharacter(name: string): Promise<any> {
     const url = `${this.baseURL}/character/${name}`;
     return this.fetchData(url);
   }

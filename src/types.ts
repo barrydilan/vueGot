@@ -2,7 +2,7 @@ export interface Character {
   name: string;
   slug: string;
   house: Pick<House, "name" | "slug">;
-  quotes: Pick<Quote, "sentence">[];
+  quotes: string[];
 };
 
 export interface House {
@@ -16,4 +16,18 @@ export interface Quote {
   character: Pick<Character, "name" | "slug" | "house">;
 };
 
-export type ApiResponse<T>=T;
+export type ServerResponse = Character | House | Quote;
+
+export type ServerArrayResponse<T extends ServerResponse> = T[];
+
+export interface ApiResponse<T> {
+  data: T[];
+}
+
+export type Data<T> = T extends Character
+  ? Character
+  : T extends House
+  ? House
+  : T extends Quote
+  ? Quote
+  : never;
