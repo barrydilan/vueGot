@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import HomeView from './views/HomeView.vue';
-
+import HomeView from './views/HomeView.vue'
 </script>
 
 <template>
-  <header>
-  </header>
+  <header></header>
   <HomeView />
 </template>
 
 <style scoped>
-  header {
-    width: 100%;
-  }
+header {
+  width: 100%;
+}
 </style>

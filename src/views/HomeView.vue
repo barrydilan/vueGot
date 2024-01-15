@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import HousesView from './HousesView.vue';
-import PersonsView from './PersonsView.vue';
-import QuotesView from './QuotesView.vue';
-
+import HousesView from './HousesView.vue'
+import PersonsView from './PersonsView.vue'
+import QuotesView from './QuotesView.vue'
 </script>
 
 <template>
@@ -27,4 +26,5 @@ import QuotesView from './QuotesView.vue';
 
 .grid-item {
   box-sizing: border-box;
-}</style>
+}
+</style>

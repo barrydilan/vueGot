@@ -3,49 +3,48 @@
     <h2 class="title">{{ sectionTitle }}</h2>
     <div class="content">
       <div class="content_wrapper">
-        <slot/>
+        <slot />
       </div>
     </div>
   </section>
 </template>
 
 <script lang="ts">
-
 export default {
   props: {
     sectionTitle: {
       type: String,
-      required: true,
+      required: true
     },
     callback: {
-      type: Function,
-    },
+      type: Function
+    }
   },
   data() {
     return {
       searchValue: '',
-      response: '',
+      response: ''
     }
   },
   methods: {
-  //   async fetchData() {
-  //     try {
-  //       const response = await fetch('https://api.gameofthronesquotes.xyz/v1/houses');
-  //       const data = await response.json();
-  //       const [character] = data;
-  //       console.log(data);
-  //       this.response = data;
-  //       console.log(this.response);
-  //     } catch (error) {
-  //       console.error('Error fetching data:', error);
-  //     }
-  //   },
-  //   getSearchResults() {
-  //     this.fetchData();
-  //     console.log(this.searchValue);
-  //   }
+    //   async fetchData() {
+    //     try {
+    //       const response = await fetch('https://api.gameofthronesquotes.xyz/v1/houses');
+    //       const data = await response.json();
+    //       const [character] = data;
+    //       console.log(data);
+    //       this.response = data;
+    //       console.log(this.response);
+    //     } catch (error) {
+    //       console.error('Error fetching data:', error);
+    //     }
+    //   },
+    //   getSearchResults() {
+    //     this.fetchData();
+    //     console.log(this.searchValue);
+    //   }
   }
-};
+}
 </script>
 
 <style>
@@ -70,7 +69,7 @@ export default {
   font-size: 0.8rem;
   border: none;
 }
- 
+
 .search-input {
   width: 100%;
   height: 2rem;
@@ -101,7 +100,7 @@ export default {
         <input class="search-input" type="text" :placeholder="'Search for ' + sectionTitle" v-model="searchValue">
         <button class="search-btn" type="submit">Search!</button>
         </form> -->
-        <!-- <ul class="content_list"> -->
-          <!-- <p>{{itemList.name}}</p> -->
-          <!-- <li v-for="item in itemList" :key="item.id" class="content_list-item">{{ item.name }}</li> -->
-        <!-- </ul> -->
+<!-- <ul class="content_list"> -->
+<!-- <p>{{itemList.name}}</p> -->
+<!-- <li v-for="item in itemList" :key="item.id" class="content_list-item">{{ item.name }}</li> -->
+<!-- </ul> -->

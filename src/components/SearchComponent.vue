@@ -1,25 +1,25 @@
 <template>
   <form action="">
-    <input type="text" :placeholder="'Search for ' + placeholderText">
+    <input type="text" :placeholder="'Search for ' + placeholderText" />
     <button type="submit">Search</button>
   </form>
 </template>
 
 <script lang="ts">
-  export default {
+export default {
   props: {
     placeholderText: {
       type: String,
-      required: true,
+      required: true
     },
     callback: {
-      type: Function,
-    },
+      type: Function
+    }
   },
   data() {
     return {
       searchValue: '',
-      response: '',
+      response: ''
     }
   }
 }
