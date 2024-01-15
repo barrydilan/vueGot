@@ -37,7 +37,7 @@ export default class GameOfThronesAPI {
     return this.fetchData(url);
   }
 
-  async getAllCharacters(): Promise<any> {
+  async getAllCharacters(): Promise<Character[]> {
     const url = `${this.baseURL}/characters`;
     return this.fetchData(url);
   }
