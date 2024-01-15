@@ -16,9 +16,13 @@ export default {
 <style scoped>
 li {
   padding: 0.8rem;
+  transition: transform 0.4s ease; 
   color: var(--tile-text);
   background-color: var(--color-background-tile);
-  transition: background-color 0.3s ease;
   text-align: center;
+}
+li:hover {
+  cursor: pointer;
+  transform: scale(1.05);
 }
 </style>
