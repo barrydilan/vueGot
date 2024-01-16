@@ -21,11 +21,11 @@ async function fetchData() {
 }
 
 async function handleSearch(query: string) {
-  searchQuery.value = query;
+  searchQuery.value = query.toLowerCase();
 }
 
 const filteredHouses = computed(() => {
-  return houses.value.filter(house => house.slug.includes(searchQuery.value))
+  return houses.value.filter(house => house.name.toLowerCase().includes(searchQuery.value))
 })
 
 onMounted(() => {
