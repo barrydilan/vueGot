@@ -12,7 +12,6 @@ li {
   transition: transform 0.4s ease;
   color: var(--tile-text);
   border-bottom: 1px solid var(--color-background-tile);
-  /* background-color: var(--color-background-tile); */
   text-align: center;
 }
 li:hover {

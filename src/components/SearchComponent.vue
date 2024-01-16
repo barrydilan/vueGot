@@ -1,11 +1,12 @@
 <template>
-  <form action="" class="search-form">
+  <form action="" class="search-form" @submit.prevent>
     <input class="search-input" type="search" :placeholder="'Search for ' + placeholderText" />
-    <button class="search-btn" type="submit">Search</button>
+    <SubmitBtn type="submit">Search</SubmitBtn>
   </form>
 </template>
 
 <script lang="ts">
+import SubmitBtn from '@/components/SubmitBtn.vue';
 export default {
   props: {
     placeholderText: {
@@ -21,7 +22,8 @@ export default {
       searchValue: '',
       response: ''
     }
-  }
+  },
+  components: {SubmitBtn}
 }
 </script>
 
@@ -30,16 +32,5 @@ export default {
   border: none;
   height: 1.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-}
-
-.search-btn {
-  height: 1.5rem;
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.search-btn:hover {
-  cursor: pointer;
-  background: rgba(0, 0, 0, 1);
 }
 </style>

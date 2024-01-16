@@ -25,6 +25,14 @@ import QuotesView from './QuotesView.vue'
   grid-template-columns: repeat(3, 1fr);
 }
 
+@media (max-width: 420px) {
+  .main {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+}
+
 .grid-item {
   box-sizing: border-box;
 }

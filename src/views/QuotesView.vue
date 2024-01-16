@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import SectionItem from '@/components/SectionItem.vue'
-import SearchComponent from '@/components/SearchComponent.vue'
 import SearchResults from '@/components/SearchResults.vue'
+import SubmitBtn from '@/components/SubmitBtn.vue'
 import QuoteItem from '@/components/QuoteItem.vue'
 import GameOfThronesAPI from '../services/api'
 import type { Quote } from '@/types'
@@ -27,7 +27,7 @@ onMounted(() => {
 
 <template>
   <SectionItem section-title="Quotes">
-    <SearchComponent placeholder-text="Quotes" />
+    <SubmitBtn @click="fetchData">Get 5 random quotes!</SubmitBtn>
     <SearchResults>
       <QuoteItem
         v-for="quote in quotes"
