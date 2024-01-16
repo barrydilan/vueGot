@@ -4,6 +4,7 @@ import SectionItem from '@/components/SectionItem.vue'
 import SearchComponent from '@/components/SearchComponent.vue'
 import SearchResults from '@/components/SearchResults.vue'
 import ListItem from '@/components/ListItem.vue'
+import PersonItem from '@/components/PersonItem.vue'
 import GameOfThronesAPI from '../services/api'
 import type { Character } from '@/types'
 
@@ -28,7 +29,12 @@ onMounted(() => {
   <SectionItem section-title="Persons">
     <SearchComponent placeholder-text="Persons" />
     <SearchResults>
-      <ListItem v-for="person in persons" :key="person.name" :name="person.name" />
+      <PersonItem
+        v-for="person in persons"
+        :key="person.name"
+        :name="person.name"
+        :house="person.house?.name"
+      />
     </SearchResults>
   </SectionItem>
 </template>

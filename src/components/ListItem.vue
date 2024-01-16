@@ -1,22 +1,15 @@
 <template>
-  <li>{{ name }}</li>
+  <li><slot></slot></li>
 </template>
 
 <script lang="ts">
-export default {
-  props: {
-    name: {
-      type: String,
-      required: true
-    }
-  }
-}
+export default {}
 </script>
 
 <style scoped>
 li {
   padding: 0.8rem;
-  transition: transform 0.4s ease; 
+  transition: transform 0.4s ease;
   color: var(--tile-text);
   background-color: var(--color-background-tile);
   text-align: center;

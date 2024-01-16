@@ -5,15 +5,15 @@
 </template>
 
 <script lang="ts">
-export default {};
+export default {}
 </script>
 
 <style scoped>
-  ul {
-    padding: 0;
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
-  }
+ul {
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+}
 </style>
