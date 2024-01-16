@@ -1,5 +1,5 @@
 <template>
-  <li><slot></slot></li>
+   <li><slot></slot></li>
 </template>
 
 <script lang="ts">
@@ -9,7 +9,7 @@ export default {}
 <style scoped>
 li {
   padding: 0.8rem;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease; 
   color: var(--tile-text);
   background-color: var(--color-background-tile);
   text-align: center;
