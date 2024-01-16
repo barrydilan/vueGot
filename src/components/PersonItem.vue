@@ -1,6 +1,9 @@
 <template>
   <ListItem>
-    <p>{{ name }} - <span>{{ house }}</span></p>
+    <p>
+      {{ name }}
+      <span v-if="house"> - {{ house }}</span>
+    </p>
   </ListItem>
 </template>
 
@@ -22,7 +25,7 @@ export default {
 </script>
 
 <style scoped>
-  span {
-    opacity: 0.4;
-  }
+span {
+  opacity: 0.4;
+}
 </style>

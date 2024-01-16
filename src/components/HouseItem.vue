@@ -3,7 +3,7 @@
     <div class="house-item">
       <p>{{ name }}</p>
       <div class="img-container">
-        <img class="img" :src="`src/assets/img/${slug}.png`" alt="">
+        <img class="img" :src="`src/assets/img/${slug}.png`" :alt="slug" />
       </div>
     </div>
   </ListItem>
@@ -20,8 +20,8 @@ export default {
     },
     slug: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   components: { ListItem }
 }

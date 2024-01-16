@@ -1,6 +1,8 @@
 <template>
   <ListItem>
-    <p>{{ name }} - <span>{{ person }}</span></p>
+    <p>
+      {{ name }} - <span>{{ person }}</span>
+    </p>
   </ListItem>
 </template>
 
@@ -14,15 +16,15 @@ export default {
     },
     person: {
       type: String,
-      required: true,
+      required: true
     }
   },
   components: { ListItem }
 }
 </script>
 
-<style>
-  span {
-    opacity: 0.4;
-  }
+<style scoped>
+span {
+  opacity: 0.4;
+}
 </style>

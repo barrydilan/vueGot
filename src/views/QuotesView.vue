@@ -29,7 +29,12 @@ onMounted(() => {
   <SectionItem section-title="Quotes">
     <SearchComponent placeholder-text="Quotes" />
     <SearchResults>
-      <QuoteItem v-for="quote in quotes" :key="quote.sentence" :name="quote.sentence" :person="quote.character?.name" />
+      <QuoteItem
+        v-for="quote in quotes"
+        :key="quote.sentence"
+        :name="quote.sentence"
+        :person="quote.character?.name"
+      />
     </SearchResults>
   </SectionItem>
 </template>
