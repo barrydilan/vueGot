@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import SectionItem from '@/components/SectionItem.vue'
 import SearchComponent from '@/components/SearchComponent.vue'
 import SearchResults from '@/components/SearchResults.vue'
@@ -9,6 +9,7 @@ import type { House } from '@/types'
 
 const api = new GameOfThronesAPI()
 const houses = ref([] as House[])
+const searchQuery = ref('')
 
 async function fetchData() {
   try {
@@ -19,6 +20,14 @@ async function fetchData() {
   }
 }
 
+async function handleSearch(query: string) {
+  searchQuery.value = query;
+}
+
+const filteredHouses = computed(() => {
+  return houses.value.filter(house => house.slug.includes(searchQuery.value))
+})
+
 onMounted(() => {
   fetchData()
 })
@@ -26,10 +35,9 @@ onMounted(() => {
 
 <template>
   <SectionItem section-title="Houses">
-    <SearchComponent placeholder-text="Houses" />
+    <SearchComponent placeholder-text="Houses" :callback="handleSearch" />
     <SearchResults>
-      <!-- <ListItem v-for="house in houses" :key="house.name" :name="house.name" /> -->
-      <HouseItem v-for="house in houses" :key="house.name" :name="house.name" :slug="house.slug" />
+      <HouseItem v-for="house in filteredHouses" :key="house.name" :name="house.name" :slug="house.slug" />
     </SearchResults>
   </SectionItem>
 </template>

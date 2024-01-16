@@ -1,6 +1,6 @@
 <template>
-  <form action="" class="search-form" @submit.prevent>
-    <input class="search-input" type="search" :placeholder="'Search for ' + placeholderText" />
+  <form action="" class="search-form" @submit.prevent="search">
+    <input class="search-input" v-model="searchValue" type="search" :placeholder="'Search for ' + placeholderText" />
     <SubmitBtn type="submit">Search</SubmitBtn>
   </form>
 </template>
@@ -14,7 +14,8 @@ export default {
       required: true
     },
     callback: {
-      type: Function
+      type: Function,
+      required: true,
     }
   },
   data() {
@@ -22,6 +23,11 @@ export default {
       searchValue: '',
       response: ''
     }
+  },
+  methods: {
+    search() {
+      this.callback(this.searchValue);
+    },
   },
   components: {SubmitBtn}
 }

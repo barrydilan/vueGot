@@ -32,7 +32,7 @@ export default class GameOfThronesAPI {
     return this.fetchData(url)
   }
 
-  async getSingleHouse(house: string): Promise<any> {
+  async getSingleHouse(house: string): Promise<House[]> {
     const url = `${this.baseURL}/house/${house}`
     return this.fetchData(url)
   }
