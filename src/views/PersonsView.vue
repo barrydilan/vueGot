@@ -38,7 +38,8 @@ onMounted(() => {
 <template>
   <SectionItem section-title="Persons" :is-loading="isLoading">
     <SearchComponent placeholder-text="Persons" :callback="handleSearch" />
-    <SearchResults>
+    <div v-if="!filteredPersons.length">Ooops! Nothing Found!</div>
+    <SearchResults v-else>
       <PersonItem
         v-for="person in filteredPersons"
         :key="person.name"
@@ -49,5 +50,3 @@ onMounted(() => {
     </SearchResults>
   </SectionItem>
 </template>
-
-<style></style>

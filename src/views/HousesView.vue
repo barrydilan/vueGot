@@ -38,7 +38,8 @@ onMounted(() => {
 <template>
   <SectionItem section-title="Houses" :is-loading="isLoading">
     <SearchComponent placeholder-text="Houses" :callback="handleSearch" />
-    <SearchResults>
+    <div v-if="!filteredHouses.length">Ooops! Nothing Found!</div>
+    <SearchResults v-else>
       <HouseItem
         v-for="house in filteredHouses"
         :key="house.name"

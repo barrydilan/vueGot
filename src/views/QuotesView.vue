@@ -42,5 +42,3 @@ onMounted(() => {
     </SearchResults>
   </SectionItem>
 </template>
-
-<style></style>
