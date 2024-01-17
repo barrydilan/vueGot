@@ -14,12 +14,12 @@ async function fetchData() {
   try {
     const response = await api.getRandomQuotes(5)
     quotes.value = response
+    console.log(response);
     quotes.value.sort((a, b) => a.sentence.length + b.sentence.length)
   } catch (error) {
     console.error('Error fetching data:', error)
   }
 }
-
 onMounted(() => {
   fetchData()
 })
@@ -34,6 +34,7 @@ onMounted(() => {
         :key="quote.sentence"
         :name="quote.sentence"
         :person="quote.character?.name"
+        :slug="quote.character?.slug"
       />
     </SearchResults>
   </SectionItem>
