@@ -1,20 +1,23 @@
 <template>
   <div class="page-wrapper">
     <div class="house-section">
-      <h2 class="house-name">{{ personData.house?.name }}</h2>
+      <PageLink :to="'house'" :slug="personData.house?.slug"><h2 class="house-name">{{ personData.house?.name }}</h2></PageLink>
       <img
         class="img"
         :src="`../src/assets/img/${personData.house?.slug}.png`"
         :alt="personData.house?.slug"
       />
     </div>
-    <h1>{{ personData?.name }}</h1>
-    <p>{{ personData?.quotes }}</p>
+    <h1 class="person-name">{{ personData?.name }}</h1>
+    <ul>
+      <li v-for="quote in personData.quotes" :key="quote">{{ quote }}</li>
+    </ul>
   </div>
 </template>
 
 <script lang="ts">
 import GameOfThronesAPI from '@/services/api'
+import PageLink from '@/components/PageLink.vue'
 import type { Character } from '@/types'
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
@@ -41,7 +44,7 @@ export default {
       personData
     }
   },
-  components: {}
+  components: {PageLink}
 }
 </script>
 
@@ -50,13 +53,25 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 4rem;
+  row-gap: 2rem;
 }
 .house-section {
-  max-width: 10%;
+  max-width: 20%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 1rem;
+}
+
+.house-name {
+  font-size: 2rem;
 }
 
 .img {
   max-width: 100%;
+}
+
+.person-name {
+  font-size: 3rem;
 }
 </style>
