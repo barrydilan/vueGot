@@ -4,9 +4,7 @@
   </ul>
 </template>
 
-<script lang="ts">
-export default {}
-</script>
+<script setup lang="ts"></script>
 
 <style scoped>
 ul {

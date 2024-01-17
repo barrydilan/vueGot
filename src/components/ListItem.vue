@@ -2,9 +2,7 @@
   <li><slot></slot></li>
 </template>
 
-<script lang="ts">
-export default {}
-</script>
+<script setup lang="ts"></script>
 
 <style scoped>
 li {

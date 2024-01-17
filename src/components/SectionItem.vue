@@ -1,7 +1,7 @@
 <template>
   <section class="wrapper">
-    <h2 class="title">{{ sectionTitle }}</h2>
-    <div v-if="isLoading" class="loading-indicator">Loading...</div>
+    <h2 class="title">{{ props.sectionTitle }}</h2>
+    <div v-if="props.isLoading" class="loading-indicator">Loading...</div>
     <div v-else class="content">
       <div class="content_wrapper">
         <slot />
@@ -10,27 +10,12 @@
   </section>
 </template>
 
-<script lang="ts">
-export default {
-  props: {
-    sectionTitle: {
-      type: String,
-      required: true
-    },
-    isLoading: {
-      type: Boolean,
-      required: true
-    },
-    callback: {
-      type: Function
-    }
-  },
-  data() {
-    return {
-      searchValue: ''
-    }
-  }
-}
+<script setup lang="ts">
+const props = defineProps<{
+  sectionTitle: string
+  isLoading: boolean
+  callback?: () => void
+}>()
 </script>
 
 <style>

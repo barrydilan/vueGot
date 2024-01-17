@@ -4,37 +4,24 @@
       class="search-input"
       v-model="searchValue"
       type="search"
-      :placeholder="'Search for ' + placeholderText"
+      :placeholder="'Search for ' + props.placeholderText"
     />
     <SubmitBtn type="submit">Search</SubmitBtn>
   </form>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import SubmitBtn from '@/components/SubmitBtn.vue'
-export default {
-  props: {
-    placeholderText: {
-      type: String,
-      required: true
-    },
-    callback: {
-      type: Function,
-      required: true
-    }
-  },
-  data() {
-    return {
-      searchValue: '',
-      response: ''
-    }
-  },
-  methods: {
-    search() {
-      this.callback(this.searchValue)
-    }
-  },
-  components: { SubmitBtn }
+import { ref } from 'vue'
+
+const props = defineProps<{
+  placeholderText: string
+  callback: (value: string) => void
+}>()
+
+const searchValue = ref('')
+const search = () => {
+  props.callback(searchValue.value)
 }
 </script>
 

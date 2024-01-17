@@ -1,32 +1,21 @@
 <template>
   <ListItem>
     <p>
-      <PageLink :to="'person'" :slug="slug">{{ name }}</PageLink>
-      <span v-if="house"> - {{ house }}</span>
+      <PageLink :to="'person'" :slug="props.slug">{{ props.name }}</PageLink>
+      <span v-if="props.house"> - {{ props.house }}</span>
     </p>
   </ListItem>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import ListItem from '@/components/ListItem.vue'
 import PageLink from '@/components/PageLink.vue'
-export default {
-  props: {
-    name: {
-      type: String,
-      required: true
-    },
-    slug: {
-      type: String,
-      required: true
-    },
-    house: {
-      type: String,
-      required: true
-    }
-  },
-  components: { ListItem, PageLink }
-}
+
+const props = defineProps<{
+  name: string
+  slug: string
+  house: string
+}>()
 </script>
 
 <style scoped>

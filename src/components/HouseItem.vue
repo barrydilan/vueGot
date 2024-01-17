@@ -14,14 +14,14 @@
 <script setup lang="ts">
 import ListItem from '@/components/ListItem.vue'
 import PageLink from '@/components/PageLink.vue'
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 const props = defineProps<{
-  name: string;
-  slug: string;
+  name: string
+  slug: string
 }>()
 
-const imagePath = ref<string>("")
+const imagePath = ref<string>('')
 
 import('../assets/img/' + props.slug + '.png')
   .then((module) => {
@@ -31,7 +31,6 @@ import('../assets/img/' + props.slug + '.png')
     console.error('Error loading image:', error)
   })
 </script>
-
 
 <style scoped>
 .house-item {

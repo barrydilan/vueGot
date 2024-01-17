@@ -1,35 +1,21 @@
 <template>
   <ListItem>
-    <p>
-      {{ name }}
-    </p>
-    <PageLink :to="'person'" :slug="slug"
-      ><span>{{ person }}</span></PageLink
-    >
+    <p>{{ props.name }}</p>
+    <PageLink :to="'person'" :slug="props.slug">
+      <span>{{ props.person }}</span>
+    </PageLink>
   </ListItem>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import ListItem from '@/components/ListItem.vue'
 import PageLink from '@/components/PageLink.vue'
 
-export default {
-  props: {
-    name: {
-      type: String,
-      required: true
-    },
-    person: {
-      type: String,
-      required: true
-    },
-    slug: {
-      type: String,
-      required: true
-    }
-  },
-  components: { ListItem, PageLink }
-}
+const props = defineProps<{
+  name: string
+  person: string
+  slug: string
+}>()
 </script>
 
 <style scoped>
