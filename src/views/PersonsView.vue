@@ -37,10 +37,11 @@ onMounted(() => {
   <SectionItem section-title="Persons">
     <SearchComponent placeholder-text="Persons" :callback="handleSearch" />
     <SearchResults>
-      <PersonItem
+        <PersonItem
         v-for="person in filteredPersons"
         :key="person.name"
         :name="person.name"
+        :slug="person.slug"
         :house="person.house?.name"
       />
     </SearchResults>

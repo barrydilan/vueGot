@@ -1,17 +1,24 @@
 <template>
   <ListItem>
-    <p>
+    <PageLink :to="'person'" :slug="slug">
+      <p>
       {{ name }}
-      <span v-if="house"> - {{ house }}</span>
-    </p>
+        <span v-if="house"> - {{ house }}</span>
+      </p>
+    </PageLink>   
   </ListItem>
 </template>
 
 <script lang="ts">
 import ListItem from '@/components/ListItem.vue'
+import PageLink from '@/components/PageLink.vue'
 export default {
   props: {
     name: {
+      type: String,
+      required: true
+    },
+    slug: {
       type: String,
       required: true
     },
@@ -20,7 +27,7 @@ export default {
       required: true
     }
   },
-  components: { ListItem }
+  components: { ListItem, PageLink }
 }
 </script>
 
