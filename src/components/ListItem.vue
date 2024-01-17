@@ -16,6 +16,5 @@ li {
 }
 li:hover {
   cursor: pointer;
-  transform: scale(1.02);
 }
 </style>

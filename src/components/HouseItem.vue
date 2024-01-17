@@ -1,13 +1,13 @@
 <template>
   <ListItem>
-    <div class="house-item">
-      <PageLink :to="'house'" :slug="slug">
+    <PageLink :to="'house'" :slug="slug">
+      <div class="house-item">
         <p>{{ name }}</p>
-      </PageLink>
-      <div class="img-container">
-        <img class="img" :src="`../src/assets/img/${slug}.png`" :alt="slug" />
+        <div class="img-container">
+          <img class="img" :src="`../src/assets/img/${slug}.png`" :alt="slug" />
+        </div>
       </div>
-    </div>
+    </PageLink>
   </ListItem>
 </template>
 

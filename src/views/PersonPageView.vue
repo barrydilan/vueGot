@@ -13,8 +13,8 @@
     </div>
     <h1 class="person-name">{{ personData?.name }}</h1>
     <SubmitBtn>New Quotes</SubmitBtn>
-    <ul>
-      <li v-for="quote in personData.quotes" :key="quote">{{ quote }}</li>
+    <ul class="quotes-list">
+      <li class="quote" v-for="quote in personData.quotes" :key="quote">{{ quote }}</li>
     </ul>
   </div>
 </template>
@@ -81,5 +81,12 @@ export default {
 
 .person-name {
   font-size: 3rem;
+}
+
+.quotes-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  font-style: italic;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="`/${to}/${slug}`">
+  <router-link :to="`/${to}/${slug}`" class="link">
     <slot></slot>
   </router-link>
 </template>
@@ -18,3 +18,16 @@ export default {
   }
 }
 </script>
+
+<style>
+.link {
+  text-decoration: underline rgba(0, 0, 0, 0);
+  transition: 0.4s ease-in-out;
+  text-decoration-skip-ink: auto;
+}
+
+.link:hover {
+  text-decoration: underline rgba(0, 0, 0, 1);
+  text-decoration-thickness: 0.1;
+}
+</style>

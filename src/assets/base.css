@@ -2,14 +2,14 @@
   --white: rgba(255, 255, 255, 1);
   --white-tile: rgba(0, 0, 0, 0.25);
 
-  --black: #181818;
+  --black: #181818cd;
   --black-tile: rgba(255, 255, 255, 0.25);
 }
 
 :root {
   --color-background: var(--white);
   --color-background-tile: var(--white-tile);
-  --tile-text: var(--black);
+  --primary-text: var(--black);
   --section-heading: var(--black);
 }
 
@@ -17,7 +17,7 @@
   :root {
     --color-background: var(--black);
     --color-background-tile: var(--black-tile);
-    --tile-text: var(--white);
+    --primary-text: var(--white);
     --section-heading: var(--white);
   }
 }
@@ -33,7 +33,7 @@
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
+  color: var(--primary-text);
   background: var(--color-background);
   transition:
     color 0.5s,

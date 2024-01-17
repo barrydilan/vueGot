@@ -3,11 +3,11 @@
     <BackBtn />
     <div class="house-section">
       <img class="img" :src="`../src/assets/img/${houseData?.slug}.png`" :alt="houseData?.slug" />
+      <PageLink :to="'house'" :slug="houseData?.slug"
+        ><h1 class="house-name">{{ houseData?.name }}</h1>
+      </PageLink>
     </div>
-    <PageLink :to="'house'" :slug="houseData?.slug"
-      ><h1 class="house-name">{{ houseData?.name }}</h1>
-    </PageLink>
-    <h3>House members:</h3>
+    <h3 class="section-title">House members:</h3>
     <ul class="members-list">
       <li v-for="member in houseData.members" :key="member.slug" class="member">
         <PageLink to="'person'" :slug="member.slug">
@@ -76,10 +76,16 @@ export default {
 .img {
   max-width: 100%;
 }
+
+.section-title {
+  font-size: 1.4rem;
+  opacity: 0.8;
+}
 .members-list {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
+  display: grid;
+  text-align: center;
+  /* grid-template-columns: repeat(2, 1fr); */
+  gap: 2rem;
 }
 
 .member {

@@ -1,11 +1,9 @@
 <template>
   <ListItem>
-    <PageLink :to="'person'" :slug="slug">
-      <p>
-        {{ name }}
-        <span v-if="house"> - {{ house }}</span>
-      </p>
-    </PageLink>
+    <p>
+      <PageLink :to="'person'" :slug="slug">{{ name }}</PageLink>
+      <span v-if="house"> - {{ house }}</span>
+    </p>
   </ListItem>
 </template>
 
