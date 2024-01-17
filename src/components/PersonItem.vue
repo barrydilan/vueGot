@@ -2,10 +2,10 @@
   <ListItem>
     <PageLink :to="'person'" :slug="slug">
       <p>
-      {{ name }}
+        {{ name }}
         <span v-if="house"> - {{ house }}</span>
       </p>
-    </PageLink>   
+    </PageLink>
   </ListItem>
 </template>
 

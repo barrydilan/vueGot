@@ -14,7 +14,7 @@ async function fetchData() {
   try {
     const response = await api.getRandomQuotes(5)
     quotes.value = response
-    console.log(response);
+    console.log(response)
     quotes.value.sort((a, b) => a.sentence.length + b.sentence.length)
   } catch (error) {
     console.error('Error fetching data:', error)

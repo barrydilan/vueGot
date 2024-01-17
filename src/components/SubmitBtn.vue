@@ -1,19 +1,19 @@
 <template>
-  <button class="search-btn" @click="handleClick" :class="{ 'clicked': isClicked }">
+  <button class="search-btn" @click="handleClick" :class="{ clicked: isClicked }">
     <slot></slot>
   </button>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-const isClicked = ref(false);
+const isClicked = ref(false)
 
 function handleClick() {
-  isClicked.value = true;
+  isClicked.value = true
   setTimeout(() => {
-    isClicked.value = false;
-  }, 200);
+    isClicked.value = false
+  }, 200)
 }
 </script>
 

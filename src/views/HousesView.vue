@@ -21,11 +21,11 @@ async function fetchData() {
 }
 
 async function handleSearch(query: string) {
-  searchQuery.value = query.toLowerCase();
+  searchQuery.value = query.toLowerCase()
 }
 
 const filteredHouses = computed(() => {
-  return houses.value.filter(house => house.name.toLowerCase().includes(searchQuery.value))
+  return houses.value.filter((house) => house.name.toLowerCase().includes(searchQuery.value))
 })
 
 onMounted(() => {
@@ -37,7 +37,12 @@ onMounted(() => {
   <SectionItem section-title="Houses">
     <SearchComponent placeholder-text="Houses" :callback="handleSearch" />
     <SearchResults>
-      <HouseItem v-for="house in filteredHouses" :key="house.name" :name="house.name" :slug="house.slug" />
+      <HouseItem
+        v-for="house in filteredHouses"
+        :key="house.name"
+        :name="house.name"
+        :slug="house.slug"
+      />
     </SearchResults>
   </SectionItem>
 </template>

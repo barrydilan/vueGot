@@ -27,10 +27,10 @@ import QuotesView from './QuotesView.vue'
 
 @media (max-width: 420px) {
   .main {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(1, 1fr);
-}
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .grid-item {

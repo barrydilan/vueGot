@@ -1,12 +1,17 @@
 <template>
   <form action="" class="search-form" @submit.prevent="search">
-    <input class="search-input" v-model="searchValue" type="search" :placeholder="'Search for ' + placeholderText" />
+    <input
+      class="search-input"
+      v-model="searchValue"
+      type="search"
+      :placeholder="'Search for ' + placeholderText"
+    />
     <SubmitBtn type="submit">Search</SubmitBtn>
   </form>
 </template>
 
 <script lang="ts">
-import SubmitBtn from '@/components/SubmitBtn.vue';
+import SubmitBtn from '@/components/SubmitBtn.vue'
 export default {
   props: {
     placeholderText: {
@@ -15,7 +20,7 @@ export default {
     },
     callback: {
       type: Function,
-      required: true,
+      required: true
     }
   },
   data() {
@@ -26,10 +31,10 @@ export default {
   },
   methods: {
     search() {
-      this.callback(this.searchValue);
-    },
+      this.callback(this.searchValue)
+    }
   },
-  components: {SubmitBtn}
+  components: { SubmitBtn }
 }
 </script>
 

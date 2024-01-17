@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from "@/views/HomeView.vue"
+import HomeView from '@/views/HomeView.vue'
 import PersonPageView from '@/views/PersonPageView.vue'
 import HousePageView from '@/views/HousePageView.vue'
 
@@ -20,7 +20,7 @@ const router = createRouter({
       path: '/house/:slug',
       name: 'house',
       component: HousePageView
-    },
+    }
   ]
 })
 

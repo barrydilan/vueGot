@@ -5,7 +5,7 @@
         <p>{{ name }}</p>
       </PageLink>
       <div class="img-container">
-        <img class="img" :src="`src/assets/img/${slug}.png`" :alt="slug" />
+        <img class="img" :src="`../src/assets/img/${slug}.png`" :alt="slug" />
       </div>
     </div>
   </ListItem>

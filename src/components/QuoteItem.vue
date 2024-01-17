@@ -1,15 +1,17 @@
 <template>
   <ListItem>
     <p>
-      {{ name }} 
+      {{ name }}
     </p>
-    <PageLink :to="'person'" :slug="slug"><span>{{ person }}</span></PageLink>
+    <PageLink :to="'person'" :slug="slug"
+      ><span>{{ person }}</span></PageLink
+    >
   </ListItem>
 </template>
 
 <script lang="ts">
-import ListItem from '@/components/ListItem.vue';
-import PageLink from '@/components/PageLink.vue';
+import ListItem from '@/components/ListItem.vue'
+import PageLink from '@/components/PageLink.vue'
 
 export default {
   props: {
@@ -27,11 +29,11 @@ export default {
     }
   },
   components: { ListItem, PageLink }
-};
+}
 </script>
 
 <style scoped>
-  span {
+span {
   opacity: 0.4;
 }
 </style>

@@ -21,11 +21,11 @@ async function fetchData() {
 }
 
 async function handleSearch(query: string) {
-  searchQuery.value = query.toLowerCase();
+  searchQuery.value = query.toLowerCase()
 }
 
 const filteredPersons = computed(() => {
-  return persons.value.filter(person => person.name.toLowerCase().includes(searchQuery.value))
+  return persons.value.filter((person) => person.name.toLowerCase().includes(searchQuery.value))
 })
 
 onMounted(() => {
@@ -37,7 +37,7 @@ onMounted(() => {
   <SectionItem section-title="Persons">
     <SearchComponent placeholder-text="Persons" :callback="handleSearch" />
     <SearchResults>
-        <PersonItem
+      <PersonItem
         v-for="person in filteredPersons"
         :key="person.name"
         :name="person.name"
