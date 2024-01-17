@@ -1,7 +1,9 @@
 <template>
   <ListItem>
     <div class="house-item">
-      <p>{{ name }}</p>
+      <PageLink :to="'house'" :slug="slug">
+        <p>{{ name }}</p>
+      </PageLink>
       <div class="img-container">
         <img class="img" :src="`src/assets/img/${slug}.png`" :alt="slug" />
       </div>
@@ -11,7 +13,7 @@
 
 <script lang="ts">
 import ListItem from '@/components/ListItem.vue'
-
+import PageLink from '@/components/PageLink.vue'
 export default {
   props: {
     name: {
@@ -23,7 +25,7 @@ export default {
       required: true
     }
   },
-  components: { ListItem }
+  components: { ListItem, PageLink }
 }
 </script>
 
