@@ -1,5 +1,6 @@
 <template>
   <div class="page-wrapper">
+    <BackBtn />
     <div class="house-section">
       <PageLink :to="'house'" :slug="personData.house?.slug"><h2 class="house-name">{{ personData.house?.name }}</h2></PageLink>
       <img
@@ -9,6 +10,7 @@
       />
     </div>
     <h1 class="person-name">{{ personData?.name }}</h1>
+    <SubmitBtn>New Quotes</SubmitBtn>
     <ul>
       <li v-for="quote in personData.quotes" :key="quote">{{ quote }}</li>
     </ul>
@@ -18,6 +20,8 @@
 <script lang="ts">
 import GameOfThronesAPI from '@/services/api'
 import PageLink from '@/components/PageLink.vue'
+import BackBtn from '@/components/BackBtn.vue'
+import SubmitBtn from '@/components/SubmitBtn.vue'
 import type { Character } from '@/types'
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
@@ -44,12 +48,13 @@ export default {
       personData
     }
   },
-  components: {PageLink}
+  components: { PageLink, BackBtn, SubmitBtn }
 }
 </script>
 
 <style scoped>
 .page-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
