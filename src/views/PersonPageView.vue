@@ -12,9 +12,9 @@
       />
     </div>
     <h1 class="person-name">{{ personData?.name }}</h1>
-    <SubmitBtn>New Quotes</SubmitBtn>
+    <SubmitBtn @click="loadNextQuotes">New Quotes</SubmitBtn>
     <ul class="quotes-list">
-      <li class="quote" v-for="quote in personData.quotes" :key="quote">{{ quote }}</li>
+      <li class="quote" v-for="quote in displayedQuotes" :key="quote">{{ quote }}</li>
     </ul>
   </div>
 </template>
@@ -25,14 +25,20 @@ import PageLink from '@/components/PageLink.vue'
 import BackBtn from '@/components/BackBtn.vue'
 import SubmitBtn from '@/components/SubmitBtn.vue'
 import type { Character } from '@/types'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
+
+const QUOTES_TO_SHOW = 2
 
 export default {
   setup() {
     const api = new GameOfThronesAPI()
     const personData = ref({} as Character)
     const route = useRoute()
+    const displayedQuotes = ref([] as string[])
+    let currentQuoteIndex = ref(0)
+    const quotesToShow = ref(QUOTES_TO_SHOW)
+
     async function fetchData() {
       const slug = route.params.slug
       const singleSlug = Array.isArray(slug) ? slug[0] : slug
@@ -43,11 +49,36 @@ export default {
         console.error('Error fetching post:', error)
       }
     }
+
+    function loadNextQuotes() {
+      updateDisplayedQuotes()
+    }
+
+    function updateDisplayedQuotes() {
+      const initialLength = personData.value.quotes.length
+      const quotes = personData.value.quotes
+      let startIndex = currentQuoteIndex.value
+      if (startIndex >= initialLength) {
+        startIndex = 0
+        currentQuoteIndex.value = 0
+      }
+      const endIndex = currentQuoteIndex.value + quotesToShow.value
+      currentQuoteIndex.value += quotesToShow.value
+      displayedQuotes.value = quotes.slice(startIndex, endIndex)
+    }
+
     onMounted(() => {
       fetchData()
     })
+
+    watch(personData, () => {
+      updateDisplayedQuotes()
+    })
+
     return {
-      personData
+      personData,
+      loadNextQuotes,
+      displayedQuotes
     }
   },
   components: { PageLink, BackBtn, SubmitBtn }
