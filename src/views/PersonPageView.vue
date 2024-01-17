@@ -95,7 +95,8 @@ export default {
   padding: 4rem;
 }
 .house-section {
-  max-width: 20%;
+  min-width: 200px;
+  max-width: 25%;
   display: flex;
   flex-direction: column;
   text-align: center;
