@@ -2,32 +2,36 @@
   <ListItem>
     <PageLink :to="'house'" :slug="slug">
       <div class="house-item">
-        <p>{{ name }}</p>
+        <p>{{ props.name }}</p>
         <div class="img-container">
-          <img class="img" :src="`../src/assets/img/${slug}.png`" :alt="slug" />
+          <img class="img" :src="imagePath" :alt="props.slug" />
         </div>
       </div>
     </PageLink>
   </ListItem>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import ListItem from '@/components/ListItem.vue'
 import PageLink from '@/components/PageLink.vue'
-export default {
-  props: {
-    name: {
-      type: String,
-      required: true
-    },
-    slug: {
-      type: String,
-      required: true
-    }
-  },
-  components: { ListItem, PageLink }
-}
+import { ref } from 'vue';
+
+const props = defineProps<{
+  name: string;
+  slug: string;
+}>()
+
+const imagePath = ref<string>("")
+
+import('../assets/img/' + props.slug + '.png')
+  .then((module) => {
+    imagePath.value = module.default
+  })
+  .catch((error) => {
+    console.error('Error loading image:', error)
+  })
 </script>
+
 
 <style scoped>
 .house-item {
