@@ -10,11 +10,13 @@ import type { Character } from '@/types'
 const api = new GameOfThronesAPI()
 const persons = ref([] as Character[])
 const searchQuery = ref('')
+const isLoading = ref(true)
 
 async function fetchData() {
   try {
     const response = await api.getAllCharacters()
     persons.value = response
+    isLoading.value = false
   } catch (error) {
     console.error('Error fetching data:', error)
   }
@@ -34,7 +36,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <SectionItem section-title="Persons">
+  <SectionItem section-title="Persons" :is-loading="isLoading">
     <SearchComponent placeholder-text="Persons" :callback="handleSearch" />
     <SearchResults>
       <PersonItem

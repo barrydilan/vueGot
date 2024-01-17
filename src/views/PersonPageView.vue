@@ -1,7 +1,7 @@
 <template>
   <div class="page-wrapper">
     <BackBtn />
-    <div class="house-section">
+    <div v-if="personData.house" class="house-section">
       <PageLink :to="'house'" :slug="personData.house?.slug"
         ><h2 class="house-name">{{ personData.house?.name }}</h2></PageLink
       >
@@ -101,7 +101,6 @@ export default {
   text-align: center;
   row-gap: 1rem;
 }
-
 .house-name {
   font-size: 2rem;
 }

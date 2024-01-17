@@ -1,7 +1,8 @@
 <template>
   <section class="wrapper">
     <h2 class="title">{{ sectionTitle }}</h2>
-    <div class="content">
+    <div v-if="isLoading" class="loading-indicator">Loading...</div>
+    <div v-else class="content">
       <div class="content_wrapper">
         <slot />
       </div>
@@ -16,33 +17,18 @@ export default {
       type: String,
       required: true
     },
+    isLoading: {
+      type: Boolean,
+      required: true
+    },
     callback: {
       type: Function
     }
   },
   data() {
     return {
-      searchValue: '',
-      response: ''
+      searchValue: ''
     }
-  },
-  methods: {
-    //   async fetchData() {
-    //     try {
-    //       const response = await fetch('https://api.gameofthronesquotes.xyz/v1/houses');
-    //       const data = await response.json();
-    //       const [character] = data;
-    //       console.log(data);
-    //       this.response = data;
-    //       console.log(this.response);
-    //     } catch (error) {
-    //       console.error('Error fetching data:', error);
-    //     }
-    //   },
-    //   getSearchResults() {
-    //     this.fetchData();
-    //     console.log(this.searchValue);
-    //   }
   }
 }
 </script>
@@ -97,12 +83,8 @@ export default {
 .content_list-item {
   font-size: 1.5rem;
 }
+
+.loading-indicator {
+  margin-top: 10rem;
+}
 </style>
-<!-- <form class="search-form" @submit.prevent="">
-        <input class="search-input" type="text" :placeholder="'Search for ' + sectionTitle" v-model="searchValue">
-        <button class="search-btn" type="submit">Search!</button>
-        </form> -->
-<!-- <ul class="content_list"> -->
-<!-- <p>{{itemList.name}}</p> -->
-<!-- <li v-for="item in itemList" :key="item.id" class="content_list-item">{{ item.name }}</li> -->
-<!-- </ul> -->

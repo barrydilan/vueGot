@@ -9,13 +9,16 @@ import type { Quote } from '@/types'
 
 const api = new GameOfThronesAPI()
 const quotes = ref([] as Quote[])
+const isLoading = ref(true)
 
 async function fetchData() {
   try {
+    isLoading.value = true
     const response = await api.getRandomQuotes(5)
     quotes.value = response
     console.log(response)
     quotes.value.sort((a, b) => a.sentence.length + b.sentence.length)
+    isLoading.value = false
   } catch (error) {
     console.error('Error fetching data:', error)
   }
@@ -26,7 +29,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <SectionItem section-title="Quotes">
+  <SectionItem section-title="Quotes" :is-loading="isLoading">
     <SubmitBtn @click="fetchData">Get 5 random quotes!</SubmitBtn>
     <SearchResults>
       <QuoteItem
