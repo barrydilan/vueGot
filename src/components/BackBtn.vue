@@ -22,9 +22,9 @@ export default {
 .back-btn {
   text-decoration: none;
   position: absolute;
-  font-size: 2rem;
+  font-size: 2.5rem;
   top: 10%;
-  left: 10%;
+  left: 5%;
   transition: 0.4s ease;
 }
 

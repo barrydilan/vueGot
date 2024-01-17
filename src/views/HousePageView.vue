@@ -59,10 +59,11 @@ export default {
   flex-direction: column;
   align-items: center;
   row-gap: 2rem;
-  padding: 4rem;
+  padding: 4rem 2rem;
 }
 .house-section {
-  max-width: 20%;
+  min-width: 200px;
+  max-width: 25%;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -84,7 +85,6 @@ export default {
 .members-list {
   display: grid;
   text-align: center;
-  /* grid-template-columns: repeat(2, 1fr); */
   gap: 2rem;
 }
 
