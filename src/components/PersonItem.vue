@@ -14,7 +14,7 @@ import PageLink from '@/components/PageLink.vue'
 const props = defineProps<{
   name: string
   slug: string
-  house: string
+  house?: string
 }>()
 </script>
 

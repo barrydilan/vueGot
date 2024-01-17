@@ -16,7 +16,6 @@ async function fetchData() {
     isLoading.value = true
     const response = await api.getRandomQuotes(5)
     quotes.value = response
-    console.log(response)
     quotes.value.sort((a, b) => a.sentence.length + b.sentence.length)
     isLoading.value = false
   } catch (error) {

@@ -10,7 +10,7 @@
     <h3 class="section-title">House members:</h3>
     <ul class="members-list">
       <li v-for="member in houseData.members" :key="member.slug" class="member">
-        <PageLink to="'person'" :slug="member.slug">
+        <PageLink :to="'person'" :slug="member.slug">
           {{ member.name }}
         </PageLink>
       </li>
