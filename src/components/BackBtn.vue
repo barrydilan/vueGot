@@ -3,21 +3,20 @@
 </template>
 
 <script lang="ts">
-import { useRouter } from 'vue-router';
+import { useRouter } from 'vue-router'
 
 export default {
   setup() {
-    const router = useRouter();
+    const router = useRouter()
     const goBack = () => {
-      router.go(-1);
-    };
+      router.go(-1)
+    }
     return {
-      goBack,
-    };
-  },
-};
+      goBack
+    }
+  }
+}
 </script>
-
 
 <style>
 .back-btn {

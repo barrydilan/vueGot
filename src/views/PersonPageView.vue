@@ -2,7 +2,9 @@
   <div class="page-wrapper">
     <BackBtn />
     <div class="house-section">
-      <PageLink :to="'house'" :slug="personData.house?.slug"><h2 class="house-name">{{ personData.house?.name }}</h2></PageLink>
+      <PageLink :to="'house'" :slug="personData.house?.slug"
+        ><h2 class="house-name">{{ personData.house?.name }}</h2></PageLink
+      >
       <img
         class="img"
         :src="`../src/assets/img/${personData.house?.slug}.png`"
@@ -59,6 +61,7 @@ export default {
   flex-direction: column;
   align-items: center;
   row-gap: 2rem;
+  padding: 4rem;
 }
 .house-section {
   max-width: 20%;
