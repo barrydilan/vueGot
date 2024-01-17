@@ -22,7 +22,7 @@ export default class GameOfThronesAPI {
     return this.fetchData(url)
   }
 
-  async getCharacterQuotes(author: string, count: number): Promise<any> {
+  async getCharacterQuotes(author: string, count: number): Promise<Quote[]> {
     const url = `${this.baseURL}/author/${author}/${count}`
     return this.fetchData(url)
   }
@@ -42,7 +42,7 @@ export default class GameOfThronesAPI {
     return this.fetchData(url)
   }
 
-  async getSingleCharacter(name: string): Promise<any> {
+  async getSingleCharacter(name: string): Promise<Character[]> {
     const url = `${this.baseURL}/character/${name}`
     return this.fetchData(url)
   }

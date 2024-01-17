@@ -4,8 +4,4 @@
   <router-view></router-view>
 </template>
 
-<style scoped>
-header {
-  width: 100%;
-}
-</style>
+<style></style>
