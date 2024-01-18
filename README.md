@@ -2,6 +2,9 @@
 A **Fully Responsive** Single Page Application (**SPA**) that displays houses, people and quotes from the series Game
 of Thrones (GOT).
 
+Please check the PR
+https://github.com/barrydilan/vueGot/pull/1
+
 # Live App 
 https://barrydilan.github.io/vueGot/
 
