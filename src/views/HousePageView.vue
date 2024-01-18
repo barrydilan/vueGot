@@ -2,7 +2,8 @@
   <div class="page-wrapper">
     <BackBtn />
     <div class="house-section">
-      <img class="img" :src="`../src/assets/img/${houseData?.slug}.png`" :alt="houseData?.slug" />
+      <img class="img"         :src="getHouseImage(houseData?.slug)"
+ :alt="houseData?.slug" />
       <PageLink :to="'house'" :slug="houseData?.slug"
         ><h1 class="house-name">{{ houseData?.name }}</h1>
       </PageLink>
@@ -22,6 +23,7 @@
 import GameOfThronesAPI from '@/services/api'
 import PageLink from '@/components/PageLink.vue'
 import BackBtn from '@/components/BackBtn.vue'
+import {getHouseImage} from '@/services/imgLoader'
 import type { House } from '@/types'
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
@@ -30,6 +32,7 @@ export default {
   setup() {
     const api = new GameOfThronesAPI()
     const houseData = ref({} as House)
+    const getHouseImageRef = ref(getHouseImage)
     const route = useRoute()
     async function fetchData() {
       const slug = route.params.slug
@@ -45,7 +48,8 @@ export default {
       fetchData()
     })
     return {
-      houseData
+      houseData,
+      getHouseImage: getHouseImageRef,
     }
   },
   components: { PageLink, BackBtn }
