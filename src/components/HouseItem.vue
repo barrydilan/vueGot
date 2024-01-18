@@ -4,7 +4,7 @@
       <div class="house-item">
         <p>{{ props.name }}</p>
         <div class="img-container">
-          <img class="img" :src="imagePath" :alt="props.slug" />
+          <img class="img" :src="getHouseImage(props.slug)" :alt="props.slug" />
         </div>
       </div>
     </PageLink>
@@ -14,22 +14,58 @@
 <script setup lang="ts">
 import ListItem from '@/components/ListItem.vue'
 import PageLink from '@/components/PageLink.vue'
-import { ref } from 'vue'
+
+import starkImg from '@/assets/img/stark.png'
+import arrynImg from '@/assets/img/arryn.png'
+import baratheonImg from '@/assets/img/arryn.png'
+import baelishImg from '@/assets/img/baelish.png'
+import boltonImg from '@/assets/img/bolton.png'
+import greyjoyImg from '@/assets/img/greyjoy.png'
+import lannisterImg from '@/assets/img/lannister.png'
+import martellImg from '@/assets/img/martell.png'
+import targaryenImg from '@/assets/img/targaryen.png'
+import tarlyImg from '@/assets/img/tarly.png'
+import tarthImg from '@/assets/img/tarth.png'
+import tullyImg from '@/assets/img/tully.png'
+import tyrellImg from '@/assets/img/tyrell.png'
+
+const getHouseImage = (slug: string) => {
+  switch (slug) {
+    case 'stark':
+      return starkImg
+    case 'arryn':
+      return arrynImg
+    case 'baelish':
+      return baelishImg
+    case 'bolton':
+      return boltonImg
+    case 'baratheon':
+      return baratheonImg
+    case 'greyjoy':
+      return greyjoyImg
+    case 'lannister':
+      return lannisterImg
+    case 'martell':
+      return martellImg
+    case 'targaryen':
+      return targaryenImg
+    case 'tarly':
+      return tarlyImg
+    case 'tarth':
+      return tarthImg
+    case 'tully':
+      return tullyImg
+    case 'tyrell':
+      return tyrellImg
+    default:
+      return ''
+  }
+}
 
 const props = defineProps<{
   name: string
   slug: string
 }>()
-
-const imagePath = ref<string>('')
-
-import('../assets/img/' + props.slug + '.png')
-  .then((module) => {
-    imagePath.value = module.default
-  })
-  .catch((error) => {
-    console.error('Error loading image:', error)
-  })
 </script>
 
 <style scoped>
