@@ -30,7 +30,7 @@ function handleClick() {
   background: rgba(0, 0, 0, 1);
 }
 .search-btn.clicked {
-  background-color: #3399ff;
+  background-color: rgba(51, 153, 255, 1);
   transform: scale(0.98);
 }
 </style>

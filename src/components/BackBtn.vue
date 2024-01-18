@@ -23,7 +23,7 @@ export default {
   text-decoration: none;
   position: absolute;
   font-size: 2.5rem;
-  top: 10%;
+  top: 5%;
   left: 5%;
   transition: 0.4s ease;
 }

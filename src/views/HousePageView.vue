@@ -58,12 +58,13 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   row-gap: 2rem;
-  padding: 4rem 2rem;
+  padding: 8rem 2rem;
 }
 .house-section {
-  min-width: 200px;
-  max-width: 25%;
+  min-width: 12.5rem;
+  max-width: 10%;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -79,7 +80,8 @@ export default {
 }
 
 .section-title {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
+  font-weight: bold;
   opacity: 0.8;
 }
 .members-list {

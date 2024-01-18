@@ -15,19 +15,3 @@ export interface Quote {
   sentence: string
   character: Pick<Character, 'name' | 'slug' | 'house'>
 }
-
-export type ServerResponse = Character | House | Quote
-
-export type ServerArrayResponse<T extends ServerResponse> = T[]
-
-export interface ApiResponse<T> {
-  data: T[]
-}
-
-export type Data<T> = T extends Character
-  ? Character
-  : T extends House
-    ? House
-    : T extends Quote
-      ? Quote
-      : never

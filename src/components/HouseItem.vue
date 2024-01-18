@@ -43,8 +43,8 @@ import('../assets/img/' + props.slug + '.png')
 }
 
 .img-container {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 6.25rem;
+  max-height: 6.25rem;
 }
 
 .img {

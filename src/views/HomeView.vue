@@ -6,15 +6,9 @@ import QuotesView from './QuotesView.vue'
 
 <template>
   <main class="main">
-    <div class="grid-item">
-      <HousesView />
-    </div>
-    <div class="grid-item">
-      <PersonsView />
-    </div>
-    <div class="grid-item">
-      <QuotesView />
-    </div>
+    <HousesView />
+    <PersonsView />
+    <QuotesView />
   </main>
 </template>
 
@@ -23,7 +17,7 @@ import QuotesView from './QuotesView.vue'
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
 }
 
@@ -33,9 +27,5 @@ import QuotesView from './QuotesView.vue'
     gap: 2rem;
     grid-template-columns: repeat(1, 1fr);
   }
-}
-
-.grid-item {
-  box-sizing: border-box;
 }
 </style>
