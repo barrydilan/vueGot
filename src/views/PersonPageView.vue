@@ -7,7 +7,7 @@
       >
       <img
         class="img"
-        :src="`../src/assets/img/${personData.house?.slug}.png`"
+        :src="getHouseImage(personData.house?.slug)"
         :alt="personData.house?.slug"
       />
     </div>
@@ -24,6 +24,7 @@ import GameOfThronesAPI from '@/services/api'
 import PageLink from '@/components/PageLink.vue'
 import BackBtn from '@/components/BackBtn.vue'
 import SubmitBtn from '@/components/SubmitBtn.vue'
+import {getHouseImage} from '@/services/imgLoader'
 import type { Character } from '@/types'
 import { ref, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
@@ -34,6 +35,7 @@ export default {
   setup() {
     const api = new GameOfThronesAPI()
     const personData = ref({} as Character)
+    const getHouseImageRef = ref(getHouseImage);
     const route = useRoute()
     const displayedQuotes = ref([] as string[])
     let currentQuoteIndex = ref(0)
@@ -78,7 +80,8 @@ export default {
     return {
       personData,
       loadNextQuotes,
-      displayedQuotes
+      displayedQuotes,
+      getHouseImage: getHouseImageRef,
     }
   },
   components: { PageLink, BackBtn, SubmitBtn }
