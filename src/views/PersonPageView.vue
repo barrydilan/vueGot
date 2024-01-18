@@ -86,7 +86,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .page-wrapper {
   position: relative;
   display: flex;
@@ -97,6 +97,7 @@ export default {
   padding: 8rem 2rem;
 }
 .house-section {
+  flex: 1;
   min-width: 200px;
   max-width: 25%;
   display: flex;
@@ -129,7 +130,7 @@ export default {
   font-style: italic;
 }
 
-@media (max-width: var(--sm-screen)) {
+@media (max-width: 580px) {
   .page-wrapper {
     flex-direction: column;
   }

@@ -106,7 +106,7 @@ export default {
   font-weight: 700;
 }
 
-@media (max-width: var(--sm-screen)) {
+@media (max-width: 580px) {
   .page-wrapper {
     flex-direction: column;
   }
