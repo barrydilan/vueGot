@@ -1,25 +1,28 @@
-# VueGoT
+# Description
+A **Fully Responsive** Single Page Application (**SPA**) that displays houses, people and quotes from the series Game
+of Thrones (GOT).
 
-This template should help get you started developing with Vue 3 in Vite.
+# Live App 
+https://barrydilan.github.io/vueGot/
 
-## Recommended IDE Setup
+# Screenshots
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+<img width="1440" alt="Снимок экрана 2024-01-18 в 15 00 02" src="https://github.com/barrydilan/vueGot/assets/90588253/f8204f7b-4716-4624-bcd5-b6bea7b5faee">
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+# Checklist:
+- [x] In the navigation area, the items "Houses", " Persons", "Quotes" should be present
+- [x] A searchable list of all houses from GOT should be displayed under "Houses". If you click on the
+name of a house, the members of that house are displayed on a subpage.
+- [x] A searchable list of all persons from GOT, including the associated house, should be displayed
+under "Persons". If you click on the name of a person, details about this person are displayed on
+a subpage (name, house, quotations).
+- [x] Furthermore, there should be a button that replaces the list of quotations of this person with
+other quotations.
+- [x] In the "Quotes" section, there is a list of five quotes by default. The user can use a button to
+replace this list with five other random quotes.
+- [x] As there are references in the API to the other entities for all houses, persons and quotations,
+links to the respective entity should be included in the individual lists.
+- [x] Some effort to a nice look and feel :)
 
 ## Project Setup
 
