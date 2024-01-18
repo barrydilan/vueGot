@@ -23,6 +23,8 @@ function handleClick() {
   color: white;
   background: rgba(0, 0, 0, 0.5);
   transition: 0.2s;
+  max-width: 50%;
+  margin: 0 auto;
 }
 
 .search-btn:hover {

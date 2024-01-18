@@ -14,7 +14,7 @@
 <script setup lang="ts">
 import ListItem from '@/components/ListItem.vue'
 import PageLink from '@/components/PageLink.vue'
-import {getHouseImage} from '@/services/imgLoader'
+import { getHouseImage } from '@/services/imgLoader'
 
 const props = defineProps<{
   name: string

@@ -1,6 +1,7 @@
 :root {
   --white: rgba(255, 255, 255, 1);
   --white-tile: rgba(0, 0, 0, 0.25);
+  --sm-screen: 580px;
 
   --black: #181818cd;
   --black-tile: rgba(255, 255, 255, 0.25);
