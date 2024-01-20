@@ -1,6 +1,9 @@
 {
+  "compilerOptions": {
+    "types": ["node"]
+  },
   "files": [],
-  "references": [
+   "references": [
     {
       "path": "./tsconfig.node.json"
     },
